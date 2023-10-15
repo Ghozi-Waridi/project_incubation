@@ -1,0 +1,34 @@
+Container(
+                width: 600,
+                height: 250,
+                margin: EdgeInsets.all(20),
+                child: Container(
+                  // color: Colors.amber,
+                  child: CarouselSlider(
+                    options: CarouselOptions(height: 300.0, autoPlay: true),
+                    items: [
+                      Image(image: AssetImage("assets/home.jpeg")),
+                      Image(image: AssetImage("assets/home2.jpeg")),
+                      Image(image: AssetImage("assets/home3.jpeg")),
+                      Image(image: AssetImage("assets/home4.jpeg")),
+                      5
+                    ].map((i) {
+                      return Builder(
+                        builder: (BuildContext context) {
+                          return Container(
+                              width: 500,
+                              height: double.infinity,
+                              margin: EdgeInsets.symmetric(horizontal: 5.0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(colorText),
+                                // image: DecorationImage(
+                                //     image: AssetImage("assets/home.jpeg"),
+                                //     fit: BoxFit.cover)
+                              ));
+                        },
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
